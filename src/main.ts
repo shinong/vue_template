@@ -21,6 +21,11 @@ const vuetify = createVuetify({
 app.use(vuetify)
 //
 
+//setup formkit
+import { plugin, defaultConfig, FormKitSchema } from '@formkit/vue'
+app.use(plugin, defaultConfig, FormKitSchema)
+//
+
 app.use(createPinia())
 app.use(router)
 
