@@ -23,7 +23,8 @@ app.use(vuetify)
 
 //setup formkit
 import { plugin, defaultConfig, FormKitSchema } from '@formkit/vue'
-app.use(plugin, defaultConfig, FormKitSchema)
+import config from '../formkit.config'
+app.use(plugin, defaultConfig(config), FormKitSchema)
 //
 
 app.use(createPinia())
