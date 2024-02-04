@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer color="primary" theme="dark" dense>
+  <v-navigation-drawer color="primary" theme="dark" dense v-model="showMenu">
     <v-list color="transparent">
       <v-list-item prepend-icon="mdi-pencil" title="Dashboard"></v-list-item>
       <v-list-item prepend-icon="mdi-account-box" title="Account"></v-list-item>
@@ -13,3 +13,7 @@
     </template>
   </v-navigation-drawer>
 </template>
+<script setup lang="ts">
+import { ref } from 'vue'
+let showMenu = ref(false)
+</script>
