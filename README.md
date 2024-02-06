@@ -56,7 +56,7 @@ npm run lint
 ### Create the docker image
 
 ```sh
-docker build -t {name of the image}
+docker build -t {name of the image} .
 ```
 
 ### run the container
