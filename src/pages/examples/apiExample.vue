@@ -9,7 +9,7 @@ api.site
     res = response
     console.log(res)
   })
-  .catch((error) => {
+  .catch((error: any) => {
     console.log(error)
   })
 </script>
