@@ -2,8 +2,8 @@ import type { AxiosInstance, AxiosResponse } from 'axios'
 import axios from 'axios'
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: '/api',
-  timeout: 10 * 1000, // 请求超时时间
+  baseURL: 'http://127.0.0.1:5000/',
+  timeout: 10 * 1000, //time out
   headers: { 'Content-Type': 'application/json;charset=UTF-8' }
 })
 
@@ -15,12 +15,13 @@ axiosInstance.interceptors.request.use((config: any) => {
 // response interceptor
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => {
-    const data = response.data
-    if (data.code === 200) {
-      return data
-    } else {
-      return Promise.reject(data)
-    }
+    // const data = response.data
+    // if (data.code === 200) {
+    //   return data
+    // } else {
+    //   return Promise.reject(data)
+    // }
+    return response
   },
   (err) => {
     return Promise.reject(err.response)
