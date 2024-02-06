@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import exampleFormKitVue from '@/pages/forms/exampleFormKit.vue'
 import Examples from '@/pages/exmapleindex.vue'
+import apiExample from '@/pages/examples/apiExample.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,10 @@ const router = createRouter({
         {
           path: 'formkit',
           component: exampleFormKitVue
+        },
+        {
+          path: 'api',
+          component: apiExample
         }
       ]
     }

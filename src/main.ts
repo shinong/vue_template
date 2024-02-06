@@ -21,6 +21,11 @@ const vuetify = createVuetify({
 app.use(vuetify)
 //
 
+// setup global api
+import ApiWrapper from '@/api/index'
+const api = new ApiWrapper()
+app.config.globalProperties.$api = api
+
 //setup formkit
 import { plugin, defaultConfig, FormKitSchema } from '@formkit/vue'
 import config from '../formkit.config'
