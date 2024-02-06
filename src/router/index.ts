@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import exampleFormKitVue from '@/pages/forms/exampleFormKit.vue'
 import Examples from '@/pages/exmapleindex.vue'
 import apiExample from '@/pages/examples/apiExample.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
