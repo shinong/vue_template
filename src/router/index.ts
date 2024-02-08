@@ -4,6 +4,7 @@ import exampleFormKitVue from '@/pages/forms/exampleFormKit.vue'
 import Examples from '@/pages/exmapleindex.vue'
 import apiExample from '@/pages/examples/apiExample.vue'
 import dataTable from '@/pages/examples/dataTable.vue'
+import thanksPage from '@/pages/thanksPage.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -20,6 +21,10 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/thanks',
+      component: thanksPage
     },
     {
       path: '/example',

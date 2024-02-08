@@ -9,7 +9,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      table: {}
+      table: []
     }
   },
   created() {
@@ -19,7 +19,6 @@ export default defineComponent({
     fetchTable() {
       this.$api.admin.fetchAllUsers().then((response: any) => {
         this.table = response
-        console.log(this.table)
       })
     }
   }

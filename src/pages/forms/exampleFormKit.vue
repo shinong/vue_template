@@ -84,6 +84,7 @@ export default defineComponent({
         .openRegistration(JSON.parse(JSON.stringify(this.res)))
         .then((response: any) => {
           console.log(response)
+          this.$router.push('/thanks')
         })
       //   console.log(JSON.parse(JSON.stringify(this.res)))
     }
