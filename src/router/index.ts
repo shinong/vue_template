@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import exampleFormKitVue from '@/pages/forms/exampleFormKit.vue'
 import Examples from '@/pages/exmapleindex.vue'
 import apiExample from '@/pages/examples/apiExample.vue'
+import dataTable from '@/pages/examples/dataTable.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -33,6 +34,10 @@ const router = createRouter({
           component: apiExample
         }
       ]
+    },
+    {
+      path: '/admin/allusers',
+      component: dataTable
     }
   ]
 })
