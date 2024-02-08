@@ -35,6 +35,7 @@ export default defineComponent({
   },
   methods: {
     fetchRes() {
+      //@ts-ignore
       this.$api.site
         .serverStatus()
         .then((response: any) => {

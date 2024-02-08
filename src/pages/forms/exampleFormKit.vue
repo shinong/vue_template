@@ -79,6 +79,7 @@ export default defineComponent({
   },
   methods: {
     save() {
+      //@ts-ignore
       this.$api.public
         .openRegistration(JSON.parse(JSON.stringify(this.res)))
         .then((response: any) => {
