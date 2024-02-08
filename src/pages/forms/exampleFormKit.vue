@@ -74,7 +74,14 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      res: {}
+      res: {
+        firstName: null,
+        lastName: null,
+        email: null,
+        phone: null,
+        status: null,
+        department: null
+      }
     }
   },
   methods: {
