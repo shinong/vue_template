@@ -8,28 +8,32 @@
             name="firstName"
             id="firstName"
             validation="required|not:Admin"
-            label="First Name"
-            help="Enter your first name (required)"
+            label="Name/ prefer name:"
             placeholder="“Shinong”"
           />
 
           <FormKit
-            type="text"
-            name="lastName"
-            id="lastName"
-            label="Last Name"
-            help="Enter your last name"
-            placeholder="“Mao”"
+            type="email"
+            label="Email address: (your school/institution email to prove your student/staff identity)"
+            name="email"
+            validation="required|email"
+            placeholder="@uwaterloo.ca"
           />
 
           <FormKit
-            type="email"
-            label="Email Address"
-            name="email"
-            help="Please enter your email address."
-            validation="required|email"
-            validation-visibility="live"
-            placeholder="@uwaterloo.ca"
+            v-model="value"
+            type="radio"
+            label="Preferred transportation"
+            :options="['E-Bike', 'E-Scooter', 'Electric car', 'Walking', 'Space tube']"
+            help="How do you like to get around?"
+          />
+
+          <FormKit
+            type="radio"
+            label="Gender"
+            name="gender"
+            validation="required"
+            :options="['Female', 'Male', 'Non-binary', 'Prefer not to say', 'other']"
           />
 
           <FormKit
@@ -81,7 +85,8 @@ export default defineComponent({
         phone: null,
         status: null,
         department: null
-      }
+      },
+      value: undefined
     }
   },
   methods: {
