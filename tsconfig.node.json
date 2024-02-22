@@ -5,10 +5,12 @@
     "vitest.config.*",
     "cypress.config.*",
     "nightwatch.conf.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    "formkit.config.ts",
+    "formkit.theme.ts"
   ],
   "compilerOptions": {
-    // "composite": true,
+    "composite": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "types": ["node"]

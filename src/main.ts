@@ -1,4 +1,4 @@
-import './assets/main.css'
+// import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -39,9 +39,10 @@ const api = new ApiWrapper()
 app.config.globalProperties.$api = api
 
 //setup formkit
-import { plugin, defaultConfig, FormKitSchema } from '@formkit/vue'
+import './style.css'
+import { plugin, defaultConfig } from '@formkit/vue'
 import config from '../formkit.config'
-app.use(plugin, defaultConfig(config), FormKitSchema)
+app.use(plugin, defaultConfig(config))
 //
 
 app.use(createPinia())
