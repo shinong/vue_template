@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="6" offset="3">
+      <v-col cols="12" offset-sm="3">
         <FormKit type="form" v-model="res" @submit="save">
           <FormKit
             type="text"
