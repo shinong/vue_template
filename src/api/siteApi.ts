@@ -4,7 +4,7 @@ import { get } from '@/services/http-wrapper'
 
 class SiteApi {
   serverStatus() {
-    return get('dev/env')
+    return get('version')
   }
 }
 
