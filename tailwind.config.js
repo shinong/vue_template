@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./formkit.theme.ts', './index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./formkit.theme.ts'],
   darkMode: 'class',
   theme: {
     extend: {}
