@@ -11,14 +11,10 @@ import SupportIcon from './icons/IconSupport.vue'
   <h1>Welcome to Qconnect</h1>
   <ul>
     <li>
-      <a href="https://lively-cliff-02fb21f10.5.azurestaticapps.net/#/example/formkit"
-        >To registration page</a
-      >
+      <a @click="$router.push('/example/formkit')">To registration page</a>
     </li>
     <li>
-      <a href="https://lively-cliff-02fb21f10.5.azurestaticapps.net/#/admin/allusers"
-        >To users list page</a
-      >
+      <a @click="$router.push('/admin/allusers')">To users list page</a>
     </li>
   </ul>
 </template>
