@@ -4,6 +4,7 @@ import exampleFormKitVue from '@/pages/forms/exampleFormKit.vue'
 import Examples from '@/pages/exmapleindex.vue'
 import apiExample from '@/pages/examples/apiExample.vue'
 import dataTable from '@/pages/examples/dataTable.vue'
+import calendar from '@/pages/calendar/calendar.vue'
 import thanksPage from '@/pages/thanksPage.vue'
 
 const router = createRouter({
@@ -37,6 +38,10 @@ const router = createRouter({
         {
           path: 'api',
           component: apiExample
+        },
+        {
+          path: 'calendar',
+          component: calendar
         }
       ]
     },
