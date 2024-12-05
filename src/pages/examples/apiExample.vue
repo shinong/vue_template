@@ -27,12 +27,14 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      res: {}
+      res: {},
+      date: '2024-11-16'
     }
   },
   created() {
     this.fetchRes()
   },
+
   methods: {
     fetchRes() {
       //@ts-ignore
