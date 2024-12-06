@@ -5,7 +5,11 @@
 <script setup lang="ts">
 import { Map as LeafletMap, Icon, Marker, tileLayer, Circle } from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { Layer } from 'leaflet'
+
+// type conversion to fix the ts check issue
+const enforceLayerType = (layer: any): Layer => layer as Layer
 
 // References
 const mapContainer = ref<HTMLElement | null>(null) // Use ref for the map container
@@ -23,8 +27,8 @@ const getCurrentLocation = () => {
           mapInstance.value.setView([latitude, longitude], 15)
 
           // Add a marker for the current location
-          const marker = new Marker([latitude, longitude], { tiitle: 'you are here' }).addTo(
-            mapInstance.value
+          enforceLayerType(new Marker([latitude, longitude], { title: 'you are here' })).addTo(
+            mapInstance.value as LeafletMap
           )
         }
       },
@@ -40,13 +44,26 @@ const getCurrentLocation = () => {
 onMounted(() => {
   if (mapContainer.value) {
     // Initialize the Leaflet map
-    mapInstance.value = new LeafletMap(mapContainer.value).setView([43.4711, -80.5433], 16)
-    tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(mapInstance.value)
+    mapInstance.value = new LeafletMap(mapContainer.value, { attributionControl: false }).setView(
+      [43.4711, -80.5433],
+      16
+    )
+
+    enforceLayerType(
+      tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19
+      })
+    ).addTo(mapInstance.value as LeafletMap)
 
     getCurrentLocation()
+  }
+})
+
+// Cleanup on component unmount
+onUnmounted(() => {
+  if (mapInstance.value) {
+    mapInstance.value.remove()
+    mapInstance.value = null
   }
 })
 </script>
