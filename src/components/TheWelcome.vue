@@ -8,7 +8,8 @@ import SupportIcon from './icons/IconSupport.vue'
 </script>
 
 <template>
-  <h1>Welcome to Qconnect</h1>
+  <h1>Welcome to Test Page</h1>
+  <p>This indicates that docker publish has been worked</p>
   <ul>
     <li>
       <a @click="$router.push('/example/formkit')">To registration page</a>
