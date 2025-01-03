@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import exampleFormKitVue from '@/pages/forms/exampleFormKit.vue'
 import Examples from '@/pages/exmapleindex.vue'
@@ -9,7 +9,7 @@ import thanksPage from '@/pages/thanksPage.vue'
 import mapVue from '@/pages/map/map.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
