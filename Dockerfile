@@ -1,15 +1,13 @@
 # Build step 1(installing node modules and preparing compiled build)
 FROM node:latest as build
 WORKDIR /VUE_TEMPLATE
-ENV PATH /VUE_TEMPLATE/node_modules/.bin:$PATH
+ENV PATH=/VUE_TEMPLATE/node_modules/.bin:$PATH
 COPY package.json ./
 RUN npm i --silent
 RUN npm install
 COPY . ./
 # ENV REACT_APP_HOST_IP_ADDRESS $API_URL
-# Define a build argument for the mode
-ARG ENV_MODE=test
-RUN npm run build -- --mode=$ENV_MODE
+RUN npm run build:stage
 
 # Build step 2(Deploying build on NGINX)
 FROM nginx:latest
