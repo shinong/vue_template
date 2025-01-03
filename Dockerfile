@@ -2,6 +2,9 @@
 FROM node:latest as build
 WORKDIR /VUE_TEMPLATE
 ENV PATH /VUE_TEMPLATE/node_modules/.bin:$PATH
+# Pass the environment as an argument and build accordingly
+ARG VUE_ENV=development
+ENV NODE_ENV=$VUE_ENV
 COPY package.json ./
 RUN npm i --silent
 RUN npm install
