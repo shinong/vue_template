@@ -5,10 +5,13 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+const hostEnv = import.meta.env.VITE_APP_Title
 </script>
 
 <template>
-  <h1>Welcome to Qconnect</h1>
+  <h1>Welcome to Test Page</h1>
+  <p>This indicates that docker publish has been worked</p>
+  <p>current hosting envrionment is: {{ hostEnv }}</p>
   <ul>
     <li>
       <a @click="$router.push('/example/formkit')">To registration page</a>
