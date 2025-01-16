@@ -7,6 +7,7 @@ import dataTable from '@/pages/examples/dataTable.vue'
 import calendar from '@/pages/calendar/calendar.vue'
 import thanksPage from '@/pages/thanksPage.vue'
 import mapVue from '@/pages/map/map.vue'
+import flowchart from '@/pages/flowChart/index.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -47,6 +48,10 @@ const router = createRouter({
         {
           path: 'map',
           component: mapVue
+        },
+        {
+          path: 'flowchart',
+          component: flowchart
         }
       ]
     },
